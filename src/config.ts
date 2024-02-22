@@ -3,11 +3,11 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://balpars.com",
   author: "balpars",
-  desc: "Compendium of balpars cyber journey.",
-  title: "Balpars Compendium",
+  desc: "a blog about cyber",
+  title: "Balpars Cyber Journey",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 6,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
