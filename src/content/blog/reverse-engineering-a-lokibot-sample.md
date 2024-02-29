@@ -17,13 +17,12 @@ canonicalURL: https://medium.com/@_Alp/reverse-engineering-a-lokibot-sample-1-dd
 I downladed this sample from MalwareBazaar.
 
 Original filename: **Invoice-pfi705-704-705.exe** 
-
-| File info: | PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows |
-| --- | --- |
-| MD5: | 6D156B57D3EED0F5C5B285437CB711BB |
-| SHA1: | D43605E4FD4BFC002728E49394FEB879B63B5D15 |
-| SHA256: | A7A2151C314A329C44DF6D43C6F2757BD8994A5C6EC4C7AA1E9CB58713796B2D |
-
+```yaml
+File info: PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows
+MD5: 6D156B57D3EED0F5C5B285437CB711BB
+SHA1: D43605E4FD4BFC002728E49394FEB879B63B5D15
+SHA256: A7A2151C314A329C44DF6D43C6F2757BD8994A5C6EC4C7AA1E9CB58713796B2D
+```
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled.png)
 
 ### Yara
@@ -83,7 +82,7 @@ We see a lot of WriteFile to RSA folder. We should analyze it further to underst
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled-5.png)
 
 Running the file with Noriben there was interesting results:
-
+```md
 [CreateProcess] malware.exe:5832 > "%UserProfile%\Desktop\a7a2151c314a329c44df6d43c6f2757bd8994a5c6ec4c7aa1e9cb58713796b2d\malware.exe"	[Child PID: 5060]
 
 [CreateProcess] malware.exe:5832 > "%UserProfile%\Desktop\a7a2151c314a329c44df6d43c6f2757bd8994a5c6ec4c7aa1e9cb58713796b2d\malware.exe"	[Child PID: 2324]
@@ -93,7 +92,7 @@ Running the file with Noriben there was interesting results:
 [CreateFolder] malware.exe:2324 > %AppData%\2CAA7D
 
 [RenameFile] malware.exe:2324 > %UserProfile%\Desktop\a7a2151c314a329c44df6d43c6f2757bd8994a5c6ec4c7aa1e9cb58713796b2d\malware.exe => %AppData%\2CAA7D\DABC2D.exe
-
+```
 There are lots of interesting strings in memory indicating that this is a stealer. We see names of many browsers. Some powershell commands.
 
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled-6.png)
@@ -158,13 +157,12 @@ There was no anti-debug routine in inital binary. So the unpacked dll should hav
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled-14.png)
 
 ## 3. Analysis of Aads.dll
-
-| File info: | PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows |
-| --- | --- |
-| MD5: | aa18b22f39180498b7cfb1ac12e936d2 |
-| SHA1: | ef30b16e85421c06c5dfad805a6d340d3c2253a4 |
-| SHA256: | 248c028f540496c344f86669c97c5d66e34dfa580fee86ed15eaa88418907b3b |
-
+```yaml
+File info: PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows
+MD5: aa18b22f39180498b7cfb1ac12e936d2
+SHA1: ef30b16e85421c06c5dfad805a6d340d3c2253a4
+SHA256: 248c028f540496c344f86669c97c5d66e34dfa580fee86ed15eaa88418907b3b
+```
 This file is also flagged by virustotal.
 
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled-15.png)
@@ -209,12 +207,12 @@ I load the decompressed file in hex editor. We see the “MZ” so we have anoth
 
 ## 4. Analysis of ReactionDiffusionLib (Second unpacked dll)
 
-| File info: | PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows |
-| --- | --- |
-| MD5: | 37e82d3e2864e27b34f5fbacaea759c3 |
-| SHA1: | a87024a466e052bff09a170bb8c6f374f6c84c32 |
-| SHA256: | 53f2ad060cf771aa4f197df5789cee95959480c244a0b392bb450c8ce7311d77 |
-
+```yaml
+File info: PE32 executable (GUI) Intel 80386 Mono/.Net assembly, for MS Windows
+MD5: 37e82d3e2864e27b34f5fbacaea759c3
+SHA1: a87024a466e052bff09a170bb8c6f374f6c84c32
+SHA256: 53f2ad060cf771aa4f197df5789cee95959480c244a0b392bb450c8ce7311d77
+```
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled-18.png)
 
 We see that this file is also a dll. 
@@ -264,13 +262,12 @@ Before leaving the dodge function and exiting the program we see another module 
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled-27.png)
 
 ## 4. Analysis of Tyrone.dll
-
-| File info: | Win32 DLL |
-| --- | --- |
-| MD5: | adfe4d53567d5e21cae2d2f5fbbcbb66 |
-| SHA1: | f111f2dfb9cf0779271cb457304f56d1015998a2 |
-| SHA256: | ecbe840f8438cd6514dc976542cfc074944f3a3a7b3233e9ab2091334edbebb8 |
-
+```yaml
+File info: Win32 DLL
+MD5: adfe4d53567d5e21cae2d2f5fbbcbb66
+SHA1: f111f2dfb9cf0779271cb457304f56d1015998a2
+SHA256: ecbe840f8438cd6514dc976542cfc074944f3a3a7b3233e9ab2091334edbebb8
+```
 ---
 
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled-28.png)
@@ -410,13 +407,12 @@ The obfuscated functions we saw above, from Tyrone.dll is responsible for creati
 - Code makes use of exceptions to make it harder to trace in debugger.
 
 ## 5. Basic Analysis of the Loki Payload
-
-| File info: | Win32 EXE |
-| --- | --- |
-| MD5: | 6FF17F281AA7EFA72A6DF5847CBAE113 |
-| SHA1: | 6ED71A950A0AFF78DFF1F716539CA1FEA2994B17 |
-| SHA256: | FF2FC9BB96D782D2311483EA46FCE75DA1EFDC884B9822E3B353706CFEB00442 |
-
+```yaml
+File info: Win32 EXE
+MD5: 6FF17F281AA7EFA72A6DF5847CBAE113
+SHA1: 6ED71A950A0AFF78DFF1F716539CA1FEA2994B17
+SHA256: FF2FC9BB96D782D2311483EA46FCE75DA1EFDC884B9822E3B353706CFEB00442
+```
 ![untitled](@assets/images/reverse-engineering-a-lokibot-sample/untitled-54.png)
 
 This payload is a C++ executable. 
