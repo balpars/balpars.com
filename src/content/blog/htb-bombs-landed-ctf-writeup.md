@@ -9,7 +9,7 @@ tags:
   - ctf
   - reverse_engineering
 ogImage: "@assets/images/htb-ctf-1/ogImage_htb_ctf_1.png"
-description: Writeup for the Hack The Box Bombs landed ctf
+description: Writeup for the Hack The Box | Bombs landed reverse engineering CTF
 canonicalURL: https://medium.com/@_Alp/hack-the-box-bombs-landed-writeup-5f123888bf3f
 ---
 
