@@ -148,7 +148,7 @@ Truth is Diffie-Hellman is never used by itself because by default it provides n
 
 Discrete Logarithms problem is very computationally expensive problem, but dedicated organizations like NSA or other security agencies of world may have more than enough resources to attempt bruteforce.
 
-I will cover these problems, especially the man-in-the-middle aspect of key exchanges in a post. If you are interested, you can use these keywords to do your own research.
+I will cover these problems, especially the man-in-the-middle aspect of key exchanges in future a post. If you are interested, you can use these keywords to do your own research.
 - RSA, PKI, SSL Certificates, Digital Signature
 
 # Sources and Further Reading
