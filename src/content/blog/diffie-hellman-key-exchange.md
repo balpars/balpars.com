@@ -1,7 +1,7 @@
 ---
 title: "The Key to Secure Communication: Exploring Diffie-Hellman"
 author: balpars
-pubDatetime: 2024-03-03T14:02:01.372Z
+pubDatetime: 2024-02-03T14:02:01.372Z
 slug: diffie-hellman-key-exchange
 featured: true
 draft: false
