@@ -144,9 +144,9 @@ Understanding Diffie-Hellman is important to understand how encryption of modern
 
 The point of Diffie-Hellman is that nothing in public domain can be combined in any way to get our secret key.
 
-Truth is Diffie-Hellman is never used by itself for the following reasons:
-- By default it provides no defense against man-in-the-middle attacks.
-- Discrete Logarithms problem is very computationally expensive problem, but dedicated organizations like NSA or other security agencies of world may have more than enough resources to attempt bruteforce.
+Truth is Diffie-Hellman is never used by itself because by default it provides no defense against man-in-the-middle attacks.
+
+Discrete Logarithms problem is very computationally expensive problem, but dedicated organizations like NSA or other security agencies of world may have more than enough resources to attempt bruteforce.
 
 I will cover these problems, especially the man-in-the-middle aspect of key exchanges in a post. If you are interested, you can use these keywords to do your own research.
 - RSA, PKI, SSL Certificates, Digital Signature
