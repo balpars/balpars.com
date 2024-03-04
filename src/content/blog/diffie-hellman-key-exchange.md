@@ -118,7 +118,7 @@ Bob calculates g to the power of b mod n, generating bg.
 
 ```
 ag = g**a mod n
-bg = g**b mob b
+bg = g**b mob n
 ```
 
 Results will be less than n, from ag and bg, it's impossible to know what a or b was.
