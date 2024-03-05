@@ -14,7 +14,7 @@ canonicalURL: https://medium.com/@_Alp/reverse-engineering-a-lokibot-sample-1-dd
 ---
 # Reverse Engineering a Lokibot Sample
 
-I downladed this sample from MalwareBazaar.
+I downladed this sample from MalwareBazaar. Lokibot is already a well known malware family, so no introduction is needed. This post aims to showcase how one can unpack it's .NET variant by hand.
 
 Original filename: **Invoice-pfi705-704-705.exe** 
 ```yaml

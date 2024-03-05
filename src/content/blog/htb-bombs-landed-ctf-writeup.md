@@ -3,7 +3,7 @@ title: Hack The Box Bombs Landed CTF Writeup
 author: balpars
 pubDatetime: 2024-02-23T08:03:01.372Z
 slug: htb-bombs-landed-ctf-writeup
-featured: true
+featured: false
 draft: false
 tags:
   - ctf
