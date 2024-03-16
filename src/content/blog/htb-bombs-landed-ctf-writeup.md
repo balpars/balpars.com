@@ -37,7 +37,7 @@ There are some interesting strings. We see ptrace, which is used by debuggers to
 
 1. We see that the program checks if it had less than 4 command arguments and comparing two variables that it had setup. First argument for main function in C is the argument count.
 2. We first see a call to mmap, which returns a pointer to the starting address of the memory region it allocates. I renamed the variable to memory_address, suddenly the code becomes significantly more readable.
-3. We then see memset to fill the buffer that mmap allocat with  `0xc3` which is the x86 assembly language opcode for the `RET` instruction (according to a certain AI 😃)
+3. We then see memset is filling the buffer that mmap allocated, with `0xc3` which is the x86 assembly opcode for the `RET` instruction (according to a certain AI)
 4. Following our memory_address variable, we see that some data is being written to address it points to.
 5. Then we see a function call to our memory_address, which indicates that the code above unpacked a function to the memory region that our memory_address points to.
 
